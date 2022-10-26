@@ -8,34 +8,86 @@
     <title>Rock Paper Scissor</title>
   </head>
   <body>
-    <h1>Rock Paper Scissor</h1>
-    <div class="playerInput">
-      <button class="playerSelection rockBtn">Rock</button>
+    <main>
+      <h1>Rock Paper Scissor</h1>
+      <div class="playerInput">
+        <button class="playerSelection rockBtn">Rock</button>
+        <button class="playerSelection paperBtn">Paper</button>
+        <button class="playerSelection ScissorBtn">Scissor</button>
+      </div>
+      <div class="mainResult">
+        <h2 class="resultText">Computer won!</h2>
+        <div class="resultsImg">
+          <div class="playerResult">
+            <h3>Your move was:</h3>
+            <div class="playerPlaceHolder"></div>
+            <object
+              class="rockSVG"
+              data="/assets/rock-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+            <object
+              class="paperSVG"
+              data="/assets/paper-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+            <object
+              class="scissorsSVG"
+              data="/assets/scissors-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+          </div>
+          <div class="computerResult">
+            <h3>The Computer move was:</h3>
+            <div class="computerPlaceHolder"></div>
+            <object
+              class="rockSVG"
+              data="/assets/rock-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+            <object
+              class="paperSVG"
+              data="/assets/paper-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+            <object
+              class="scissorsSVG"
+              data="/assets/scissors-svgrepo-com.svg"
+              width="300"
+              height="300"
+            ></object>
+          </div>
+        </div>
+      </div>
+      <div class="score">
+        <h3>Player <span class="playerScore">0</span></h3>
+        <h3>Computer <span class="computerScore">0</span></h3>
+      </div>
+    </main>
 
-      <button class="playerSelection paperBtn">Paper</button>
-      <button class="playerSelection ScissorBtn">Scissor</button>
-    </div>
-    <div class="computerResult">
-      <div class="result"></div>
-      <div><p class="resultText"></p></div>
-    </div>
-
-    <object
+    <!-- <object
+      class="rockSVG"
       data="/assets/rock-svgrepo-com.svg"
       width="300"
       height="300"
     ></object>
     <object
+      class="paperSVG"
       data="/assets/paper-svgrepo-com.svg"
       width="300"
       height="300"
     ></object>
     <object
+      class="scissorsSVG"
       data="/assets/scissors-svgrepo-com.svg"
       width="300"
       height="300"
-    ></object>
-    <div class="score"></div>
+    ></object> -->
     <script src="script.js"></script>
   </body>
 </html>

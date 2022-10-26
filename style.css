@@ -3,6 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+main {
+  height: 100vh;
+  /* background-color: ; */
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+}
 
 h1 {
   margin-top: 32px;
@@ -11,8 +19,16 @@ h1 {
 .playerInput {
   /* background-color: darkgray; */
   display: flex;
-  justify-content: space-between;
-  margin: 5% 20%;
+  justify-content: space-evenly;
+}
+.mainResult {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: blue; */
 }
 
 .playerSelection {
@@ -20,6 +36,34 @@ h1 {
   padding: 30px;
 }
 
-.computerResult {
+.resultText {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.resultsImg {
   display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.score {
+  max-height: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+object {
+  display: none;
+}
+
+.playerPlaceHolder {
+  height: 300px;
+  width: 300px;
+  background-color: lightgray;
+}
+.computerPlaceHolder {
+  height: 300px;
+  width: 300px;
+  background-color: lightgray;
 }

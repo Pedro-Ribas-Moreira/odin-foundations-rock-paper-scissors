@@ -2,10 +2,11 @@
 computer select a random input 
 display result in screen
 add result to score*/
-
-const rockBtn = document.querySelector(".rockBtn");
-const paperBtn = document.querySelector(".paperBtn");
-const scissor = document.querySelector(".scissorBtn");
+const playerObj = document.querySelectorAll(".playerResult object");
+const computerObj = (obj = document.querySelectorAll(".computerResult object"));
+const resultTxt = document.querySelector(".resultText");
+const playerScoreTxt = document.querySelector(".playerScore");
+const computerScoreTxt = document.querySelector(".computerScore");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -16,30 +17,76 @@ const computerMove = (playerMove) => {
   return moves[n];
 };
 
+const resetMove = () => {
+  playerObj.forEach((element) => {
+    element.style.display = "none";
+  });
+  computerObj.forEach((element) => {
+    element.style.display = "none";
+  });
+};
+const revealMove = (move, who) => {
+  document.querySelector(".playerPlaceHolder").style.display = "none";
+  document.querySelector(".computerPlaceHolder").style.display = "none";
+  let obj;
+  if (who == "player") {
+    obj = playerObj;
+  } else if (who == "computer") {
+    obj = computerObj;
+  }
+  console.log(obj);
+  obj.forEach((e) => {
+    if (move == "Rock" && e.classList.contains("rockSVG")) {
+      e.style.display = "block";
+    } else if (move == "Paper" && e.classList.contains("paperSVG")) {
+      e.style.display = "block";
+    } else if (move == "Scissor" && e.classList.contains("scissorsSVG")) {
+      e.style.display = "block";
+    }
+  });
+};
+
 const engine = (playerMove, computerMove) => {
   if (playerMove === computerMove) {
-    console.log(`Computer chose: ${computerMove}`);
-    console.log(`Player chose: ${playerMove}`);
-    console.log("tie game");
-  } else if (
-    (computerMove == "Rock" && playerMove == "Scissor") ||
-    (computerMove == "Scissor" && playerMove == "Paper") ||
-    (computerMove == "Paper" && playerMove == "Rock")
-  ) {
+    revealMove(playerMove, "player");
+    revealMove(computerMove, "computer");
+    resultTxt.innerHTML = "Tie game!";
+  } else if (computerMove == "Rock" && playerMove == "Scissor") {
     computerScore++;
-    console.log(`Computer chose: ${computerMove}`);
-    console.log(`Player chose: ${playerMove}`);
-    console.log("Computer wins");
+    computerScoreTxt.innerText = computerScore;
+
+    revealMove(playerMove, "player");
+    revealMove(computerMove, "computer");
+
+    resultTxt.innerHTML = "Computer wins!";
+  } else if (computerMove == "Scissor" && playerMove == "Paper") {
+    computerScore++;
+    computerScoreTxt.innerText = computerScore;
+
+    revealMove(playerMove, "player");
+    revealMove(computerMove, "computer");
+
+    resultTxt.innerHTML = "Computer wins!";
+  } else if (computerMove == "Paper" && playerMove == "Rock") {
+    computerScore++;
+    computerScoreTxt.innerText = computerScore;
+    revealMove(playerMove, "player");
+    revealMove(computerMove, "computer");
+    resultTxt.innerHTML = "Computer wins!";
   } else {
     playerScore++;
-    console.log(`Computer chose: ${computerMove}`);
-    console.log(`Player chose: ${playerMove}`);
-    console.log("Player wins");
+    playerScoreTxt.innerText = playerScore;
+
+    revealMove(playerMove, "player");
+    revealMove(computerMove, "computer");
+
+    resultTxt.innerHTML = "Player wins!";
   }
 
   if (playerScore == 5 || computerScore == 5) {
-    console.log("Game over!");
+    resultTxt.innerHTML = "Game is over!";
   }
+  revealMove();
 };
 
 document.addEventListener("click", (e) => {
@@ -48,9 +95,15 @@ document.addEventListener("click", (e) => {
     e.target.innerText === "Paper" ||
     e.target.innerText === "Scissor"
   ) {
+    resetMove();
     const playerInput = e.target.innerText;
     engine(playerInput, computerMove());
     console.log(playerScore);
     console.log(computerScore);
+  }
+
+  if (resultTxt == "Game Over!") {
+    playerScore = 0;
+    computerScore = 0;
   }
 });

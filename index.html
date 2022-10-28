@@ -9,67 +9,83 @@
   </head>
   <body>
     <main>
-      <h1>Rock Paper Scissor</h1>
-      <div class="playerInput">
-        <button class="playerSelection rockBtn">Rock</button>
-        <button class="playerSelection paperBtn">Paper</button>
-        <button class="playerSelection ScissorBtn">Scissor</button>
+      <section class="game">
+        
+        <h1>Rock Paper Scissor</h1>
+        <div class="playerInput">
+          <div><h3>Choose your weapon:</h3></div>
+        <div class="btn-div">
+          <button class="playerSelection rockBtn">Rock</button>
+          <button class="playerSelection paperBtn">Paper</button>
+          <button class="playerSelection ScissorBtn">Scissor</button>
+          <button class="resetGame" style="display : none"}s">Play Again!</button>
+        </div>
       </div>
       <div class="mainResult">
-        <h2 class="resultText">Computer won!</h2>
+        <div class="score">
+          <h3>Scoreboard</h3>
+          <div>
+            <h3>Player: <span class="playerScore">0</span></h3>
+            <h3>Computer: <span class="computerScore">0</span></h3>
+          </div>
+        </div>
+        <h2 class="resultText">New Game!</h2>
+        
         <div class="resultsImg">
           <div class="playerResult">
             <h3>Your move was:</h3>
             <div class="playerPlaceHolder"></div>
             <object
-              class="rockSVG"
-              data="/assets/rock-svgrepo-com.svg"
-              width="300"
+            class="rockSVG"
+            data="/assets/rock-svgrepo-com.svg"
+            width="300"
               height="300"
-            ></object>
-            <object
+              ></object>
+              <object
               class="paperSVG"
               data="/assets/paper-svgrepo-com.svg"
               width="300"
               height="300"
             ></object>
             <object
-              class="scissorsSVG"
-              data="/assets/scissors-svgrepo-com.svg"
-              width="300"
-              height="300"
+            class="scissorsSVG"
+            data="/assets/scissors-svgrepo-com.svg"
+            width="300"
+            height="300"
             ></object>
           </div>
           <div class="computerResult">
             <h3>The Computer move was:</h3>
             <div class="computerPlaceHolder"></div>
             <object
-              class="rockSVG"
-              data="/assets/rock-svgrepo-com.svg"
-              width="300"
-              height="300"
+            class="rockSVG"
+            data="/assets/rock-svgrepo-com.svg"
+            width="300"
+            height="300"
             ></object>
             <object
-              class="paperSVG"
-              data="/assets/paper-svgrepo-com.svg"
-              width="300"
-              height="300"
+            class="paperSVG"
+            data="/assets/paper-svgrepo-com.svg"
+            width="300"
+            height="300"
             ></object>
             <object
-              class="scissorsSVG"
-              data="/assets/scissors-svgrepo-com.svg"
-              width="300"
-              height="300"
+            class="scissorsSVG"
+            data="/assets/scissors-svgrepo-com.svg"
+            width="300"
+            height="300"
             ></object>
           </div>
         </div>
       </div>
-      <div class="score">
-        <h3>Player <span class="playerScore">0</span></h3>
-        <h3>Computer <span class="computerScore">0</span></h3>
-      </div>
+    </section>
+    
+    <footer>
+      
+      Pedro Moreira © 2022
+    </footer>
+    
     </main>
-
     <!-- <object
       class="rockSVG"
       data="/assets/rock-svgrepo-com.svg"

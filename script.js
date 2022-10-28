@@ -3,10 +3,11 @@ computer select a random input
 display result in screen
 add result to score*/
 const playerObj = document.querySelectorAll(".playerResult object");
-const computerObj = (obj = document.querySelectorAll(".computerResult object"));
+const computerObj = document.querySelectorAll(".computerResult object");
 const resultTxt = document.querySelector(".resultText");
 const playerScoreTxt = document.querySelector(".playerScore");
 const computerScoreTxt = document.querySelector(".computerScore");
+const playerBtns = document.querySelectorAll(".playerSelection");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -85,8 +86,11 @@ const engine = (playerMove, computerMove) => {
 
   if (playerScore == 5 || computerScore == 5) {
     resultTxt.innerHTML = "Game is over!";
+    playerBtns.forEach((e) => {
+      e.style.display = "none";
+      document.querySelector(".resetGame").style.display = "inline-flex";
+    });
   }
-  revealMove();
 };
 
 document.addEventListener("click", (e) => {
@@ -101,9 +105,13 @@ document.addEventListener("click", (e) => {
     console.log(playerScore);
     console.log(computerScore);
   }
-
-  if (resultTxt == "Game Over!") {
+  if (e.target.innerText === "Play Again!") {
     playerScore = 0;
     computerScore = 0;
+    playerScoreTxt.innerHTML = "0";
+    computerScoreTxt.innerHTML = "0";
+    playerBtns.forEach((e) => (e.style.display = "inline-flex"));
+    document.querySelector(".resetGame").style.display = "none";
+    resultTxt.innerText = "New Game!";
   }
 });

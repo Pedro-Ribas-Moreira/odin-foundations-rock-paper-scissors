@@ -2,8 +2,8 @@
 computer select a random input 
 display result in screen
 add result to score*/
-const playerObj = document.querySelectorAll(".playerResult object");
-const computerObj = document.querySelectorAll(".computerResult object");
+const playerObj = document.querySelectorAll(".playerResult > img");
+const computerObj = document.querySelectorAll(".computerResult > img");
 const resultTxt = document.querySelector(".resultText");
 const playerScoreTxt = document.querySelector(".playerScore");
 const computerScoreTxt = document.querySelector(".computerScore");

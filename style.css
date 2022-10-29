@@ -124,11 +124,39 @@ h3 {
 }
 
 img {
-  width: 300px;
+  display: none;
+  max-width: 300px;
   height: 300px;
 }
-object {
-  display: none;
+.playerResult > img {
+  animation: mymove 0.5s;
+}
+.computerResult > img {
+  animation: computerMove 0.5s;
+}
+
+@keyframes mymove {
+  from {
+    transform: translateX(-100%);
+    rotate: 10deg;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes computerMove {
+  from {
+    transform: translateX(100%);
+    rotate: 10deg;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .playerPlaceHolder {

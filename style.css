@@ -115,6 +115,10 @@ h3 {
   text-align: center;
   margin-top: 16px;
 }
+.gameOverText {
+  display: none;
+  text-align: center;
+}
 .resultsImg {
   display: flex;
   flex: 1;
@@ -158,7 +162,10 @@ img {
     opacity: 1;
   }
 }
-
+.playerResult > h3,
+.computerResult > h3 {
+  display: none;
+}
 .playerPlaceHolder {
   height: 300px;
   width: 300px;
@@ -189,4 +196,40 @@ footer > a {
 }
 footer > i {
   color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  .resetGame {
+    width: 100%;
+  }
+  .game {
+    max-width: 500;
+    padding: 0 16px;
+  }
+  img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .game {
+    max-width: 100%;
+    padding: 0 5%;
+  }
+  .resultsImg h3 {
+    font-size: 12px;
+  }
+  .computerResult {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  img {
+    /* margin: auto; */
+    width: 120px;
+    height: 200px;
+    /* background-color: red; */
+  }
 }

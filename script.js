@@ -25,7 +25,11 @@ const resetMove = () => {
   computerObj.forEach((element) => {
     element.style.display = "none";
   });
+  document.querySelector(".playerResult h3").style.display = "none";
+  document.querySelector(".computerResult h3").style.display = "none";
+  document.querySelector(".gameOverText").style.display = "none";
 };
+
 const revealMove = (move, who) => {
   document.querySelector(".playerPlaceHolder").style.display = "none";
   document.querySelector(".computerPlaceHolder").style.display = "none";
@@ -85,7 +89,7 @@ const engine = (playerMove, computerMove) => {
   }
 
   if (playerScore == 5 || computerScore == 5) {
-    resultTxt.innerHTML = "Game is over!";
+    document.querySelector(".gameOverText").style.display = "block";
     playerBtns.forEach((e) => {
       e.style.display = "none";
       document.querySelector(".resetGame").style.display = "inline-flex";
@@ -102,8 +106,10 @@ document.addEventListener("click", (e) => {
     resetMove();
     const playerInput = e.target.innerText;
     engine(playerInput, computerMove());
-    console.log(playerScore);
-    console.log(computerScore);
+    document.querySelector(".playerResult h3").style.display = "block";
+    document.querySelector(".computerResult h3").style.display = "block";
+    // console.log(playerScore);
+    // console.log(computerScore);
   }
   if (e.target.innerText === "Play Again!") {
     playerScore = 0;
@@ -113,5 +119,6 @@ document.addEventListener("click", (e) => {
     playerBtns.forEach((e) => (e.style.display = "inline-flex"));
     document.querySelector(".resetGame").style.display = "none";
     resultTxt.innerText = "New Game!";
+    resetMove();
   }
 });

@@ -203,8 +203,14 @@ footer > i {
     width: 100%;
   }
   .game {
-    max-width: 500;
-    padding: 0 16px;
+    max-width: 100%;
+    padding: 0 5%;
+  }
+
+  .computerResult {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   img {
     width: 180px;
@@ -213,19 +219,9 @@ footer > i {
 }
 
 @media only screen and (max-width: 500px) {
-  .game {
-    max-width: 100%;
-    padding: 0 5%;
-  }
   .resultsImg h3 {
     font-size: 12px;
   }
-  .computerResult {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
   img {
     /* margin: auto; */
     width: 120px;

@@ -120,6 +120,10 @@ h3 {
   display: none;
   text-align: center;
 }
+.resultDescription {
+  display: none;
+  text-align: center;
+}
 .resultsImg {
   display: flex;
   flex: 1;

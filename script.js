@@ -5,6 +5,7 @@ add result to score*/
 const playerObj = document.querySelectorAll(".playerResult > img");
 const computerObj = document.querySelectorAll(".computerResult > img");
 const resultTxt = document.querySelector(".resultText");
+const resultDesc = document.querySelector(".resultDescription");
 const playerScoreTxt = document.querySelector(".playerScore");
 const computerScoreTxt = document.querySelector(".computerScore");
 const playerBtns = document.querySelectorAll(".playerSelection");
@@ -52,18 +53,20 @@ const revealMove = (move, who) => {
 };
 
 const engine = (playerMove, computerMove) => {
+  resultDesc.style.display = "block";
   if (playerMove === computerMove) {
     revealMove(playerMove, "player");
     revealMove(computerMove, "computer");
     resultTxt.innerHTML = "Tie game!";
+    resultDesc.innerHTML = "";
   } else if (computerMove == "Rock" && playerMove == "Scissor") {
     computerScore++;
     computerScoreTxt.innerText = computerScore;
 
     revealMove(playerMove, "player");
     revealMove(computerMove, "computer");
-
     resultTxt.innerHTML = "Computer wins!";
+    resultDesc.innerHTML = `${computerMove} beats ${playerMove}`;
   } else if (computerMove == "Scissor" && playerMove == "Paper") {
     computerScore++;
     computerScoreTxt.innerText = computerScore;
@@ -72,12 +75,14 @@ const engine = (playerMove, computerMove) => {
     revealMove(computerMove, "computer");
 
     resultTxt.innerHTML = "Computer wins!";
+    resultDesc.innerHTML = `${computerMove} beats ${playerMove}`;
   } else if (computerMove == "Paper" && playerMove == "Rock") {
     computerScore++;
     computerScoreTxt.innerText = computerScore;
     revealMove(playerMove, "player");
     revealMove(computerMove, "computer");
     resultTxt.innerHTML = "Computer wins!";
+    resultDesc.innerHTML = `${computerMove} beats ${playerMove}`;
   } else {
     playerScore++;
     playerScoreTxt.innerText = playerScore;
@@ -86,6 +91,7 @@ const engine = (playerMove, computerMove) => {
     revealMove(computerMove, "computer");
 
     resultTxt.innerHTML = "Player wins!";
+    resultDesc.innerHTML = `${playerMove} beats ${computerMove}`;
   }
 
   if (playerScore == 5 || computerScore == 5) {
@@ -119,6 +125,8 @@ document.addEventListener("click", (e) => {
     playerBtns.forEach((e) => (e.style.display = "inline-flex"));
     document.querySelector(".resetGame").style.display = "none";
     resultTxt.innerText = "New Game!";
+    resultDesc.innerText = "";
+    resultDesc.style.display = "none";
     resetMove();
   }
 });

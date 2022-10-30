@@ -140,7 +140,13 @@ This is an example of how to list things you need to use the software and how to
 
 ## How to play
 
-You play against the computer in a best of five game, selecting your move with the buttons at the top.
+<p>
+You play against the computer in a best of five Rock Paper and Scissor game. <br>
+To begin the game you select your move with one of the tree options at the top, 
+then you can check the result of the match with the text below the score board.
+<br>
+Whoever reaches 5 points first wins the game!
+</p>
 
 <img src="./assets/newgame.png" alt="Logo" width="500" height="300">
 <img src="./assets/endGame.png" alt="Logo" width="500" height="300">

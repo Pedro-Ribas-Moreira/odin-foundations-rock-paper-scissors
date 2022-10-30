@@ -25,6 +25,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   max-width: 650px;
+  min-width: 650px;
   margin: auto;
   /* margin-bottom: 16px; */
 }
@@ -199,6 +200,9 @@ footer > i {
 }
 
 @media only screen and (max-width: 700px) {
+  body {
+    overflow: auto;
+  }
   .resetGame {
     width: 100%;
   }

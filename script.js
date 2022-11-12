@@ -14,7 +14,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 const computerMove = (playerMove) => {
-  const moves = ["Rock", "Paper", "Scissor"];
+  const moves = ["Rock", "Paper", "Scissors"];
   const n = Math.floor(Math.random() * moves.length);
   return moves[n];
 };
@@ -46,7 +46,7 @@ const revealMove = (move, who) => {
       e.style.display = "block";
     } else if (move == "Paper" && e.classList.contains("paperSVG")) {
       e.style.display = "block";
-    } else if (move == "Scissor" && e.classList.contains("scissorsSVG")) {
+    } else if (move == "Scissors" && e.classList.contains("scissorsSVG")) {
       e.style.display = "block";
     }
   });
@@ -59,7 +59,7 @@ const engine = (playerMove, computerMove) => {
     revealMove(computerMove, "computer");
     resultTxt.innerHTML = "Tie game!";
     resultDesc.innerHTML = "";
-  } else if (computerMove == "Rock" && playerMove == "Scissor") {
+  } else if (computerMove == "Rock" && playerMove == "Scissors") {
     computerScore++;
     computerScoreTxt.innerText = computerScore;
 
@@ -67,7 +67,7 @@ const engine = (playerMove, computerMove) => {
     revealMove(computerMove, "computer");
     resultTxt.innerHTML = "Computer wins!";
     resultDesc.innerHTML = `${computerMove} beats ${playerMove}`;
-  } else if (computerMove == "Scissor" && playerMove == "Paper") {
+  } else if (computerMove == "Scissors" && playerMove == "Paper") {
     computerScore++;
     computerScoreTxt.innerText = computerScore;
 
@@ -107,7 +107,7 @@ document.addEventListener("click", (e) => {
   if (
     e.target.innerText === "Rock" ||
     e.target.innerText === "Paper" ||
-    e.target.innerText === "Scissor"
+    e.target.innerText === "Scissors"
   ) {
     resetMove();
     const playerInput = e.target.innerText;

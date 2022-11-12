@@ -34,10 +34,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-<h1 align="center">Rock Paper and Scissor</h1>
+<h1 align="center">Rock Paper and Scissors</h1>
 
   <p align="center">
-    A rock paper and scissor game, part of the <a target="_blank" href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors">The Odin Project - Fullstack Development Course </a> 
+    A rock paper and scissors game, part of the <a target="_blank" href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors">The Odin Project - Fullstack Development Course </a> 
     <br />
     <!-- <a href="https://github.com/Pedro-Ribas-Moreira/odin-foundations-rock-paper-scissors"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
@@ -83,7 +83,7 @@
 <br>
 JS was mainly used to create the main engine of the game, while CSS was used for styling and animations with keyframes.
 </p>
-<!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Pedro-Ribas-Moreira`, `odin-foundations-rock-paper-scissors`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `Rock Paper and Scissor`, `project_description` -->
+<!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Pedro-Ribas-Moreira`, `odin-foundations-rock-paper-scissors`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `Rock Paper and Scissors`, `project_description` -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +141,7 @@ This is an example of how to list things you need to use the software and how to
 ## How to play
 
 <p>
-You play against the computer in a best of five Rock Paper and Scissor game. <br>
+You play against the computer in a best of five Rock Paper and Scissors game. <br>
 To begin the game you select your move with one of the tree options at the top, 
 then you can check the result of the match with the text below the score board.
 <br>
